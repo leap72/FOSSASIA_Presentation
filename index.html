@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>FOSSASIA - IT Automation with Ansible</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>FOSSASIA 2015</h1>
+					<h2> IT Automation with Ansible </h2>
+					<p>
+						<small>By Leap SOK / <a href="http://twitter.com/leapsok72">@leapsok72</a></small>
+					</p>
+				</section>
+
+				<section>
+					<div align="left">
+					<h2>Presentation summary</h2>
+						<p>About Me</p>
+						<p>Background and Lessons Learnt</p>
+						<p>What and Why Ansible</p>
+						<p>Ansible in Practices</p>
+						<p>Case Study</p>
+						<p>Video Demostration</p>
+					</div>
+				</section>
+
+				<section>
+					<div align="left">
+						<h2>About Me</h2>
+						<p>
+						<font color="SteelBlue"> Leap SOK - @leapsok72 - leap@web-essentials.asia</font>
+						<p>
+					   Senior IT Manager at Web Essentials
+					  </p>
+					  <p>Open Source Cambodia Colloborator</p>
+					  <p>
+					   Co-Lead @ubuntuKH Loco and @DevOps_KH
+					   </p>
+					   Co-Organizer Startup Weekend Phnom Penh and Siem Reap
+						</p>
+					</div>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2>Background</h2>
+						<div align="left">
+						  <p>We used traditional Development and Deployment method</p>
+						  <font color="blue"> <p> Developers write code </p></font>
+							<font color="Maroon"><p> Operations deploy code </p></font>
+						</div>
+					</section>
+					<section>
+						<p><img src="http://fossasia.local/pic/dev_ops.gif" style="width:700px;height:350px"></p>
+					</section>
+
+					<section>
+						<p><img src="http://fossasia.local/pic/project-handover.gif" style="width:700px;height:350px"></p>
+					</section>
+
+					<section>
+						<h2>Sometime a go</h2>
+						<div align="left">
+						<p>Final product and environment not installed on developer machine</p>
+						<p>Only source code in the version control</p>
+						<p>Deployment instructure in howto or interactive application</p>
+						<p>Hundreds of shell scripts</p>
+						</div>
+					</section>
+				</section>
+
+				<section>
+						<h2>We started</h2>
+				</section>
+
+
+				<section>
+						<h2>We finally created our first prototype</h2>
+				</section>
+
+					<section>
+						<p><img src="http://fossasia.local/pic/first_stage.gif" style="width:700px;height:450px"></p>
+				</section>
+
+				<section>
+					<h2>Lessons Learnt</h2>
+					<div align="left">
+						<p>Deployment and Infrastructure as code in version control</p>
+						<p>Production ready!</p>
+						<p>Regular deployment to live and continous testing</p>
+						<p>Empowering developers and adding transparency</p>
+						<p>Building a fearless culture</p>
+					</div>
+				</section>
+
+				<section>
+					<h2>What is Ansible?</h2>
+						<p>Open Souce tool</p>
+						<p>Configuration Management, Application Deployment, and Orchestration</p>
+						<p>Written in Python</p>
+				</section>
+
+				<section>
+					<h2>Why Ansible?</h2>
+					<p>Agentless</p>
+					<p>Easy to use</p>
+					<p>Human readable</p>
+					<p>Predictable</p>
+					<p>Powerful</p>
+				</section>
+
+				<section>
+					<h2>Ansible in Practices</h2>
+						<p>Using Dymanic Inventory</p>
+						<p>Different Production vs. Staging</p>
+						<p>Using Role in Playbook</p>
+						<p>Testing</p>
+						<p>Passwordless</p>
+				</section>
+
+				<section>
+					<h2>Simple to Start</h2>
+						<p>Scales "up" when you need to</p>
+				</section>
+
+				<section>
+					<h2>Ansible Architecture</h2>
+						<p><img src="http://fossasia.local/pic/ANSIBLE_DIAGRAM.jpg"></p>
+						<p class="fragment">... SSH and API ...</p>
+						<p><font size="3">http://www.ansible.cn/docs/images/ANSIBLE_DIAGRAM.jpg</p></font>
+				</section>
+
+				<section>
+					<h2>Ansible Key Components</h2>
+					<p>Inventory</p>
+					<p>Modules/Tasks</p>
+					<p>Ad-Hocs</p>
+					<p>Playbooks</p>
+				</section>
+
+
+				<section data-markdown>
+					<script type="text/template">
+						## Ansible Inventory
+
+						```
+						  ## Sample Hosts Inventory
+							localhost ansible_connection=local
+
+							[internal:children]
+							internal_hosts
+							internal_vms
+
+							[internal_hosts]
+							ci-slave         ansible_ssh_host=10.10.2.208
+
+							[internal_vms]
+							hubot            ansible_ssh_host=10.10.10.45
+							joel             ansible_ssh_host=10.10.10.30
+							ci               ansible_ssh_host=10.10.10.42
+							elija            ansible_ssh_host=10.10.10.38
+
+
+						```
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Ansible Ad-Hocs
+
+						```
+					  ## Sample Ad-Hocs
+
+					   ansible wekhweb300 -a "free -m"
+
+
+						```
+						</script>
+					</section>
+
+
+				<section data-markdown>
+					<script type="text/template">
+						## Ansible Playbooks
+
+						```
+						  ## Sample Playbooks
+							---
+							- hosts: webkhweb300
+							  sudo: true
+							  gather_facts: true
+							  roles:
+									- role: common
+									- role: apache
+									- role: mysql
+									- role: projects
+									- role: sudo
+
+						```
+					</script>
+				</section>
+
+				<section>
+					<h2>Case Study</h2>
+				</section>
+
+				<section>
+					<p><img src="http://fossasia.local/pic/weused.png" style="width:650px;height:450px" ></p>
+				</section>
+
+				<section>
+					<p>Project Event Management System</h2>
+						<p><img src="http://fossasia.local/pic/KIME_Cloud.png" style="width:650px;height:450px" ></p>
+			</section>
+
+			<section>
+					<h2>Ansible for the Server Provisioning </h2>
+						<video width="650" height="440" controls>
+						  <source src="pic/Infrastructure.ogv" type="video/ogg">
+						</video>
+			</section>
+
+			<section>
+					<h2>Ansible for the Deployment</h2>
+						<video width="650" height="440" controls>
+						  <source src="pic/Deployment.ogv" type="video/ogg">
+						</video>
+			</section>
+
+				<section style="text-align: center;">
+					<h1>Thanks</h1>
+					<p>
+						<small>Leap SOK / <a href="http://twitter.com/leapsok72">@leapsok72</a></small>
+					</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
